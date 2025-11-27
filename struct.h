@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:06 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/25 11:26:07 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/27 15:52:02 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ typedef struct s_data
 	char	**map;
 	int		map_width;
 	int		map_height;
+	void	*wall;
+	void	*floor;
+	void	*player;
+	void	*collectible;
+	void	*exit;
 }	t_data;
 
 #endif
