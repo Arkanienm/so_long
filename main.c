@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:01 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 17:26:36 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 13:14:23 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,14 @@ int main(int argc, char **argv)
 	if (lst.window == NULL)
 		return (0);
     debug_print_map(&lst);
+	if (!init_images(&lst))
+	{
+		close_window(&lst);
+		ft_printf("Error");
+		return (0);
+	}
+	render_map(&lst);
 	mlx_hook(lst.window, 17, 0, close_window, &lst);
 	mlx_hook(lst.window, 2, 1L<<0, key_handler, &lst);
-	lst.img = mlx_xpm_file_to_image(lst.mlx, "sprites/idle_down.xpm", &lst.img_width, &lst.img_height);
-	mlx_put_image_to_window(lst.mlx, lst.window, lst.img, 0, 0);
-	ft_printf("check_content = %d", check_content(&lst));
 	mlx_loop(lst.mlx);
 }

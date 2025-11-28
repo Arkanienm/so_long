@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:16:35 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 18:11:37 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 13:35:50 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,32 @@
 void clean_sprites(t_data *data)
 {
 	if (data->wall)
-		data->wall = NULL;
-	else
-		return ;
+		mlx_destroy_image(data->mlx, data->wall);
 	if (data->floor)
-		data->floor = NULL;
-	else
-		return ;
+		mlx_destroy_image(data->mlx, data->floor);
 	if (data->collectible)
-		data->collectible = NULL;
-	else
-		return ;
+		mlx_destroy_image(data->mlx, data->collectible);
 	if (data->player)
-		data->player = NULL;
-	else
-		return ;
+		mlx_destroy_image(data->mlx, data->player);
 	if (data->exit)
-		data->exit = NULL;
-	else
-		return ;
+		mlx_destroy_image(data->mlx, data->exit);
 }
 
 int init_images(t_data *data)
 {
-	data->wall = mlx_xpm_file_to_image(data->mlx, "sprites/tile1.xmp", 32, 32);
+	data->wall = mlx_xpm_file_to_image(data->mlx, "sprites/tile1.xpm", &data->img_width, &data->img_height);
 		if (!data->wall)
 		{
 			clean_sprites(data);
 			return (0);
 		}	
-	data->floor = mlx_xpm_file_to_image(data->mlx, "sprites/tile0.xmp", 32, 32);
-	if (!data->wall)
+	data->floor = mlx_xpm_file_to_image(data->mlx, "sprites/tile0.xpm", &data->img_width, &data->img_height);
+	if (!data->floor)
 		{
 			clean_sprites(data);
 			return (0);
 		}	
-	data->collectible = mlx_xpm_file_to_image(data->mlx, "sprites/key.xmp", 32, 32);
+	data->collectible = mlx_xpm_file_to_image(data->mlx, "sprites/key.xpm", &data->img_width, &data->img_height);
 	if (!data->collectible)
 		{
 			clean_sprites(data);
@@ -63,13 +53,13 @@ int init_images(t_data *data)
 }
 int init_images2(t_data *data)
 {
-	data->player = mlx_xpm_file_to_image(data->mlx, "sprites/idle_down.xmp", 32, 32);
+	data->player = mlx_xpm_file_to_image(data->mlx, "sprites/idle_down.xpm", &data->img_width, &data->img_height);
 	if (!data->player)
 		{
 			clean_sprites(data);
 			return (0);
 		}	
-	data->exit = mlx_xpm_file_to_image(data->mlx, "sprites/door.xmp", 32, 32);
+	data->exit = mlx_xpm_file_to_image(data->mlx, "sprites/door.xpm", &data->img_width, &data->img_height);
 	if (!data->exit)
 		{
 			clean_sprites(data);

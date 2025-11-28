@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:00:02 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 16:16:22 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 13:02:56 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ void	pathing(t_data *data, int *x, int *y);
 int		flood_verif(char **tab, t_data *data);
 void	free_tab(char **tab);
 int		check_path(t_data *data);
+void	clean_sprites(t_data *data);
+int		init_images(t_data *data);
+int		init_images2(t_data *data);
+void	put_sprite(char c, t_data *data, int i, int height);
+int		render_map(t_data *data);
 
 #endif
