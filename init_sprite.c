@@ -6,64 +6,85 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:16:35 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 13:35:50 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 16:54:16 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "so_long_lib.h"
 
-void clean_sprites(t_data *data)
+void	clean_sprites(t_data *data)
 {
 	if (data->wall)
-		mlx_destroy_image(data->mlx, data->wall);
+	{
+		mlx_destroy_image (data->mlx, data->wall);
+		data->wall = NULL;
+	}
 	if (data->floor)
-		mlx_destroy_image(data->mlx, data->floor);
-	if (data->collectible)
-		mlx_destroy_image(data->mlx, data->collectible);
+	{
+		mlx_destroy_image (data->mlx, data->floor);
+		data->floor = NULL;
+	}
+	if (data->collec)
+	{
+		mlx_destroy_image (data->mlx, data->collec);
+		data->collec = NULL;
+	}
 	if (data->player)
-		mlx_destroy_image(data->mlx, data->player);
+	{
+		mlx_destroy_image (data->mlx, data->player);
+		data->player = NULL;
+	}
 	if (data->exit)
-		mlx_destroy_image(data->mlx, data->exit);
+	{
+		mlx_destroy_image (data->mlx, data->exit);
+		data->exit = NULL;
+	}
 }
 
-int init_images(t_data *data)
+int	init_images(t_data *data)
 {
-	data->wall = mlx_xpm_file_to_image(data->mlx, "sprites/tile1.xpm", &data->img_width, &data->img_height);
-		if (!data->wall)
-		{
-			clean_sprites(data);
-			return (0);
-		}	
-	data->floor = mlx_xpm_file_to_image(data->mlx, "sprites/tile0.xpm", &data->img_width, &data->img_height);
+	data->wall = mlx_xpm_file_to_image (data->mlx, "sprites/tile1.xpm",
+			&data->img_width, &data->img_height);
+	if (!data->wall)
+	{
+		clean_sprites (data);
+		return (0);
+	}
+	data->floor = mlx_xpm_file_to_image (data->mlx, "sprites/tile0.xpm",
+			&data->img_width, &data->img_height);
 	if (!data->floor)
-		{
-			clean_sprites(data);
-			return (0);
-		}	
-	data->collectible = mlx_xpm_file_to_image(data->mlx, "sprites/key.xpm", &data->img_width, &data->img_height);
-	if (!data->collectible)
-		{
-			clean_sprites(data);
-			return (0);
-		}
-	if (!init_images2(data))
-		return(0);
+	{
+		clean_sprites (data);
+		return (0);
+	}
+	data->collec = mlx_xpm_file_to_image (data->mlx, "sprites/key.xpm",
+			&data->img_width, &data->img_height);
+	if (!data->collec)
+	{
+		clean_sprites (data);
+		return (0);
+	}
+	if (!init_images2 (data))
+		return (0);
 	return (1);
 }
-int init_images2(t_data *data)
+
+int	init_images2(t_data *data)
 {
-	data->player = mlx_xpm_file_to_image(data->mlx, "sprites/idle_down.xpm", &data->img_width, &data->img_height);
+	data->player = mlx_xpm_file_to_image(data->mlx, "sprites/idle_down.xpm",
+			&data->img_width, &data->img_height);
 	if (!data->player)
-		{
-			clean_sprites(data);
-			return (0);
-		}	
-	data->exit = mlx_xpm_file_to_image(data->mlx, "sprites/door.xpm", &data->img_width, &data->img_height);
+	{
+		clean_sprites(data);
+		return (0);
+	}
+	data->exit = mlx_xpm_file_to_image(data->mlx, "sprites/door.xpm",
+			&data->img_width, &data->img_height);
 	if (!data->exit)
-		{
-			clean_sprites(data);
-			return (0);
-		}
+	{
+		clean_sprites(data);
+		return (0);
+	}
 	return (1);
 }

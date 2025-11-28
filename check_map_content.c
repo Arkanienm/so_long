@@ -6,24 +6,31 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:07:58 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 16:09:03 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 15:14:53 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "so_long_lib.h"
 
-void content_verif(t_data *data, int height, int width, int tab[3])
+void	content_verif(t_data *data, int height, int width, int tab[3])
 {
 	char	c;
-	
+
 	c = data->map[height][width];
 	if (c == 'P')
+	{
 		tab[0] += 1;
+		data->player_x = width;
+		data->player_y = height;
+	}
 	if (c == 'E')
 		tab[1] += 1;
 	if (c == 'C')
+	{
 		tab[2] += 1;
+		data->collectibles_left += 1;
+	}
 }
 
 int	wrong_caracter(t_data *data, int height, int width)
@@ -40,7 +47,7 @@ int	check_content(t_data *data)
 {
 	int	height;
 	int	width;
-	int tab[3];
+	int	tab[3];
 
 	tab[0] = 0;
 	tab[1] = 0;

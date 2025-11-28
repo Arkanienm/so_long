@@ -6,14 +6,14 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:52:17 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 12:57:12 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 15:29:10 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "so_long_lib.h"
 
-void put_sprite(char c, t_data *data, int i, int height)
+void	put_sprite(char c, t_data *data, int i, int height)
 {
 	int	x;
 	int	y;
@@ -29,7 +29,6 @@ void put_sprite(char c, t_data *data, int i, int height)
 		mlx_put_image_to_window(data->mlx, data->window, data->floor, x, y);
 		mlx_put_image_to_window(data->mlx, data->window, data->player, x, y);
 	}
-		
 	if (c == 'E')
 	{
 		mlx_put_image_to_window(data->mlx, data->window, data->floor, x, y);
@@ -38,15 +37,15 @@ void put_sprite(char c, t_data *data, int i, int height)
 	if (c == 'C')
 	{
 		mlx_put_image_to_window(data->mlx, data->window, data->floor, x, y);
-		mlx_put_image_to_window(data->mlx, data->window, data->collectible, x, y);
+		mlx_put_image_to_window(data->mlx, data->window, data->collec, x, y);
 	}
 }
 
-int render_map(t_data *data)
+int	render_map(t_data *data)
 {
-	int	i;
-	int	height;
-	char c;
+	int		i;
+	int		height;
+	char	c;
 
 	c = ' ';
 	i = 0;

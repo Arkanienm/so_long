@@ -6,17 +6,17 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:10:35 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 16:11:44 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 15:17:27 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 #include "so_long_lib.h"
 
-char **copy_map(t_data *data)
+char	**copy_map(t_data *data)
 {
-	char **copy;
-	int	i;
+	char	**copy;
+	int		i;
 
 	i = 0;
 	copy = malloc(sizeof(char *) * (data->map_height + 1));
@@ -31,22 +31,22 @@ char **copy_map(t_data *data)
 	return (copy);
 }
 
-void flood_fill(char **tab, int x, int y)
+void	flood_fill(char **tab, int x, int y)
 {
 	if (tab[y][x] == '1' || tab[y][x] == 'v')
 		return ;
 	tab[y][x] = 'v';
-	flood_fill(tab, x + 1, y);
-	flood_fill(tab, x - 1, y);
-	flood_fill(tab, x, y + 1);
-	flood_fill(tab, x, y - 1);
+	flood_fill (tab, x + 1, y);
+	flood_fill (tab, x - 1, y);
+	flood_fill (tab, x, y + 1);
+	flood_fill (tab, x, y - 1);
 }
 
-void pathing(t_data *data, int *x, int *y)
+void	pathing(t_data *data, int *x, int *y)
 {
 	int	height;
-	int i;
-	
+	int	i;
+
 	height = 0;
 	i = 0;
 	while (height < data->map_height)
@@ -62,15 +62,15 @@ void pathing(t_data *data, int *x, int *y)
 			i++;
 		}
 		i = 0;
-		height++;		
+		height ++;
 	}
 }
 
 int	flood_verif(char **tab, t_data *data)
 {
 	int	height;
-	int i;
-	
+	int	i;
+
 	height = 0;
 	i = 0;
 	while (height < data->map_height)
@@ -82,7 +82,7 @@ int	flood_verif(char **tab, t_data *data)
 			i++;
 		}
 		i = 0;
-		height++;		
+		height ++;
 	}
 	return (1);
 }

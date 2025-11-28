@@ -6,19 +6,18 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:06 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 15:52:02 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 15:29:06 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
-#define STRUCT_H
-#include <fcntl.h>
-#include "minilibx-linux/mlx.h"
-#include "get_next_line/get_next_line.h"
-#include "ft_printf/ft_printf.h"
-#include <stdlib.h>
-
-#include <stdio.h>
+# define STRUCT_H
+# include <fcntl.h>
+# include "minilibx-linux/mlx.h"
+# include "get_next_line/get_next_line.h"
+# include "ft_printf/ft_printf.h"
+# include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_data
 {
@@ -33,8 +32,12 @@ typedef struct s_data
 	void	*wall;
 	void	*floor;
 	void	*player;
-	void	*collectible;
+	void	*collec;
 	void	*exit;
+	int		moves_count;
+	int		collectibles_left;
+	int		player_x;
+	int		player_y;
 }	t_data;
 
 #endif

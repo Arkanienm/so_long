@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:14:45 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/27 16:15:28 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 17:39:48 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 void	free_tab(char **tab)
 {
-	int i;
+	int	i;
 
+	if (!tab)
+		return ;
 	i = 0;
 	while (tab[i])
 	{
@@ -24,6 +26,7 @@ void	free_tab(char **tab)
 		tab[i] = NULL;
 		i++;
 	}
+	free(tab);
 }
 
 int	check_path(t_data *data)
@@ -36,7 +39,6 @@ int	check_path(t_data *data)
 	i = 0;
 	p_x = 0;
 	p_y = 0;
-
 	tab = copy_map(data);
 	if (!tab)
 		return (0);
@@ -45,10 +47,8 @@ int	check_path(t_data *data)
 	if (!flood_verif(tab, data))
 	{
 		free_tab(tab);
-		free(tab);
 		return (0);
 	}
 	free_tab(tab);
-	free(tab);
 	return (1);
 }

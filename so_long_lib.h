@@ -6,17 +6,16 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:00:02 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 13:02:56 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/28 15:53:28 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_LIB_H
-#define SO_LONG_LIB_H
-#include "struct.h"
+# define SO_LONG_LIB_H
+# include "struct.h"
 
 int		get_map_height(char *filename);
 void	*init_map(char *filename, t_data *data);
-void	debug_print_map(t_data *data);
 size_t	ft_strlent(const char *s);
 int		close_window(t_data *lst);
 int		key_handler(int keycode, t_data *lst);
