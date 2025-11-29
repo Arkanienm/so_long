@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:16:35 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 16:54:16 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/29 14:06:40 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	init_images(t_data *data)
 		clean_sprites (data);
 		return (0);
 	}
-	data->collec = mlx_xpm_file_to_image (data->mlx, "sprites/key.xpm",
+	data->collec = mlx_xpm_file_to_image (data->mlx, "sprites/collec.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->collec)
 	{
@@ -72,7 +72,7 @@ int	init_images(t_data *data)
 
 int	init_images2(t_data *data)
 {
-	data->player = mlx_xpm_file_to_image(data->mlx, "sprites/idle_down.xpm",
+	data->player = mlx_xpm_file_to_image(data->mlx, "sprites/char_up.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->player)
 	{

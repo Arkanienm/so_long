@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:01 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 17:46:14 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/11/29 14:17:25 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int argc, char **argv)
 		return (0);
 	if (!all_map_verif(&lst))
 		return (0);
-	lst.window = mlx_new_window(lst.mlx, 800, 800, "So_long");
+	lst.window = mlx_new_window(lst.mlx, 1220, 1220, "So_long");
 	if (lst.window == NULL)
 		return (0);
 	if (!img_verif(&lst))
