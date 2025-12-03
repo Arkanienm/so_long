@@ -90,7 +90,9 @@ Exemple de carte valide :
 1111111111111
 ```
 ---
-`![Screenshot](sforeadme.png)`
+## 📸 Aperçu
+
+![Aperçu du jeu](game_preview.png)
 ---
 
 ## Algorthme de Validation (Flood Fill)**
