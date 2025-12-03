@@ -15,7 +15,7 @@
 static int	f_count_len(unsigned int nb)
 {
 	int	len;
-	int	zero;
+	unsigned int	zero;
 
 	zero = 0;
 	len = 0;

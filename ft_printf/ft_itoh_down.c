@@ -44,7 +44,7 @@ static void	ft_low_write_letter(unsigned int nb)
 int	ft_itoh_down(unsigned int nb)
 {
 	int	len;
-	int	zero;
+	unsigned int	zero;
 
 	zero = 0;
 	len = count_len(nb);
