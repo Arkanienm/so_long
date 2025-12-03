@@ -44,9 +44,11 @@ static void	ft_low_write_letter(unsigned int nb)
 int	ft_itoh_down(unsigned int nb)
 {
 	int	len;
+	int	zero;
 
+	zero = 0;
 	len = count_len(nb);
-	if (nb < 0)
+	if (nb < zero)
 		nb *= -1;
 	if (nb <= 9)
 	{
