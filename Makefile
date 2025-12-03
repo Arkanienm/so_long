@@ -3,7 +3,7 @@ NAME        = so_long
 NAME_BONUS  = so_long_bonus
 
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -g3 -g
+CFLAGS      = -Wall -Wextra -Werror -g3
 
 SRCS        = main.c check_map_content.c check_map_form.c check_path_utils.c \
               check_path.c init_map.c init_sprite.c manage_ft.c rendering_map.c \
@@ -19,10 +19,6 @@ BONUS_SRCS  = main_bonus.c rendering_map_bonus.c \
 			  init_player_bonus.c 
 
 BONUS_OBJS  = $(BONUS_SRCS:.c=.o)
-
-
-
-
 LIBFT       = ./ft_printf/libftprintf.a
 MLX         = ./minilibx-linux/libmlx.a
 MLX_FLAGS   = -Lminilibx-linux -lmlx -L/usr/lib -lXext -lX11 -lm -lz
