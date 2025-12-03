@@ -92,7 +92,7 @@ Exemple de carte valide :
 ---
 ## 📸 Aperçu
 
-![Aperçu du jeu]()
+![Aperçu du jeu](sforeadme.png)
 ---
 
 ## Algorthme de Validation (Flood Fill)**
