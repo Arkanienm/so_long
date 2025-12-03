@@ -34,9 +34,7 @@ int	check_path(t_data *data)
 	char	**tab;
 	int		p_x;
 	int		p_y;
-	int		i;
 
-	i = 0;
 	p_x = 0;
 	p_y = 0;
 	tab = copy_map(data);
