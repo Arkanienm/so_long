@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:01 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 15:46:13 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/09 16:52:15 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,25 @@ int	all_map_verif(t_data *data)
 	if (check_rectangular(data) == 0)
 	{
 		ft_printf("Error\n");
+		ft_printf("The map isn't rectangular\n");
 		return (0);
 	}
 	if (check_wall(data) == 0)
 	{
 		ft_printf("Error\n");
+		ft_printf("The map isn't surrounded by walls\n");
 		return (0);
 	}
 	if (!check_content(data))
 	{
 		ft_printf("Error\n");
+		ft_printf("Wrong quantity of contents\n");
 		return (0);
 	}
 	if (!check_path(data))
 	{
 		ft_printf("Error\n");
+		ft_printf("Impossible path\n");
 		return (0);
 	}
 	return (1);
@@ -42,8 +46,9 @@ int	img_verif(t_data *lst)
 {
 	if (!init_images(lst))
 	{
-		close_window(lst);
 		ft_printf("Error\n");
+		ft_printf("Can't properly load sprites\n");
+		close_window(lst);
 		return (0);
 	}
 	return (1);
@@ -68,21 +73,22 @@ int	main(int argc, char **argv)
 	t_data	lst;
 
 	init_struct(&lst);
-	if (argc != 2)
-		return (0);
 	lst.mlx = mlx_init();
 	if (lst.mlx == NULL)
 		return (0);
-	if (!init_map(argv[1], &lst))
+	if (!check_argc(argc) || !init_map(argv[1], &lst)
+		|| !check_extention_args(argv[1]))
+	{
 		close_window(&lst);
-	if (!lst.map)
 		return (0);
-	if (!all_map_verif(&lst))
+	}
+	if ((!lst.map) || !all_map_verif(&lst))
+	{
+		close_window(&lst);
 		return (0);
+	}
 	lst.window = mlx_new_window(lst.mlx, 1220, 1220, "So_long");
-	if (lst.window == NULL)
-		return (0);
-	if (!img_verif(&lst))
+	if (lst.window == NULL || !img_verif(&lst))
 		return (0);
 	render_map(&lst);
 	mlx_hook(lst.window, 17, 0, close_window, &lst);

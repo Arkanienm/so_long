@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:16:35 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 16:06:39 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/09 14:10:22 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ void	clean_sprites2(t_data *data)
 	if (data->enemy)
 	{
 		mlx_destroy_image (data->mlx, data->enemy);
-		data->exit = NULL;
+		data->enemy = NULL;
 	}
 	if (data->collec2)
 	{
 		mlx_destroy_image (data->mlx, data->collec2);
-		data->exit = NULL;
+		data->collec2 = NULL;
 	}
 	if (data->collec3)
 	{
 		mlx_destroy_image (data->mlx, data->collec3);
-		data->exit = NULL;
+		data->collec3 = NULL;
 	}
 	if (data->collec4)
 	{
 		mlx_destroy_image (data->mlx, data->collec4);
-		data->exit = NULL;
+		data->collec4 = NULL;
 	}
 }
 

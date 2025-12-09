@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:00:02 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 15:53:28 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/09 16:36:19 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int		init_images(t_data *data);
 int		init_images2(t_data *data);
 void	put_sprite(char c, t_data *data, int i, int height);
 int		render_map(t_data *data);
+int		check_extention_args(char *str);
+int		check_argc(int argc);
 
 #endif

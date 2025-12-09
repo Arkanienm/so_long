@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:00:02 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 17:20:22 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/09 16:36:12 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int		init_collec(t_data *data);
 int		init_player(t_data *data);
 int		clean_sprites3(t_data *data);
 void	ft_player_rotation(t_data *data, int x_offset, int y_offset);
+int		check_extention_args(char *str);
+int		check_argc(int argc);
 
 #endif

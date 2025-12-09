@@ -7,7 +7,8 @@ CFLAGS      = -Wall -Wextra -Werror -g3
 
 SRCS        = main.c check_map_content.c check_map_form.c check_path_utils.c \
               check_path.c init_map.c init_sprite.c manage_ft.c rendering_map.c \
-              get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+              get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
+			  check_extention_args.c
 
 OBJS        = $(SRCS:.c=.o)
 
@@ -16,7 +17,7 @@ BONUS_SRCS  = main_bonus.c rendering_map_bonus.c \
               check_path.c init_map.c init_sprite_bonus.c manage_ft_bonus.c \
               get_next_line/get_next_line.c get_next_line/get_next_line_utils.c \
 			  ft_itoa_bonus.c ft_manage_next_bonus.c init_collec_bonus.c \
-			  init_player_bonus.c 
+			  init_player_bonus.c check_extention_args.c
 
 BONUS_OBJS  = $(BONUS_SRCS:.c=.o)
 LIBFT       = ./ft_printf/libftprintf.a

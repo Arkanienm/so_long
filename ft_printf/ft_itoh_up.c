@@ -43,7 +43,7 @@ static void	ft_write_up_letter(unsigned int nb)
 
 int	ft_itoh_up(unsigned int nb)
 {
-	int	len;
+	int				len;
 	unsigned int	zero;
 
 	zero = 0;
