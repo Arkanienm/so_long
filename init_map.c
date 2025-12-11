@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:58:47 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/09 15:10:58 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/11 14:55:41 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,18 @@ int	return_error(int fd, t_data	*data)
 	{
 		free (data->map);
 		data->map = NULL;
-		ft_printf("Error\nCan't open the file");
+		ft_printf("Error\nCan't open the file\n");
 		return (0);
 	}
 	return (1);
 }
 
-int	verif_line(char *line)
+int	verif_line(char *line, int fd)
 {
 	if (!line)
 	{
-		ft_printf("Error\nEmpty file");
+		ft_printf("Error\nEmpty file\n");
+		close (fd);
 		return (0);
 	}
 	return (1);
@@ -82,7 +83,7 @@ void	*init_map(char *filename, t_data *data)
 		return (NULL);
 	call_map_height(data, filename);
 	line = get_next_line(fd);
-	if (!verif_line(line))
+	if (!verif_line(line, fd))
 		return (0);
 	while (line != NULL)
 	{

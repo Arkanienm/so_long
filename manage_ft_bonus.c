@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/09 14:07:34 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/11 14:50:32 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	close_window(t_data *data)
 		data->mlx = NULL;
 	}
 	exit(0);
-	return (0);
 }
 
 void	set_new_var(t_data *data, int new_y, int new_x)
@@ -66,7 +65,7 @@ void	move_player(t_data *data, int x_offset, int y_offset)
 	{
 		if (data->collectibles_left == 0)
 		{
-			ft_printf("VICTOIRE");
+			ft_printf("VICTOIRE\n");
 			close_window(data);
 		}
 		return ;

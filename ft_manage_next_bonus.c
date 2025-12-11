@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:05:36 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 17:20:08 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/11 14:48:54 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_manage_next(t_data *data, int new_y, int new_x)
 {
 	if (data->map[new_y][new_x] == 'N')
 	{
-		ft_printf("GAME OVER");
+		ft_printf("GAME OVER\n");
 		close_window(data);
 		return (0);
 	}

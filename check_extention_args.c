@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:36:34 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/09 16:51:40 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/11 14:48:41 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	check_extention_args(char *str)
 	if (verif == 0)
 	{
 		ft_printf("Error\n");
-		ft_printf("Wrong map extention");
+		ft_printf("Wrong map extention\n");
 		return (0);
 	}
 	return (1);
