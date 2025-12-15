@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/11 14:50:32 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:02:12 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,28 @@ int	close_window(t_data *data)
 
 void	set_new_var(t_data *data, int new_y, int new_x)
 {
-	data->map[data->player_y][data->player_x] = '0';
+	if (data->map[new_y][new_x] == '1')
+		return ;
+	if (data->map[new_y][new_x] == 'E')
+		data->e_verif ++;
+	if (data->e_verif == 0)
+		data->map[data->player_y][data->player_x] = '0';
+	if (data->e_verif == 1)
+	{
+		data->map[data->player_y][data->player_x] = '0';
+		data->e_verif++;
+	}
+	else if (data->e_verif == 2)
+	{
+		data->map[data->player_y][data->player_x] = 'E';
+		data->e_verif = 0;
+	}
 	data->map[new_y][new_x] = 'P';
 	data->player_x = new_x;
 	data->player_y = new_y;
 	data->moves_count += 1;
+	ft_printf("nombre de pas = %d\n", data->moves_count);
+	render_map(data);
 }
 
 void	move_player(t_data *data, int x_offset, int y_offset)
@@ -68,7 +85,6 @@ void	move_player(t_data *data, int x_offset, int y_offset)
 			ft_printf("VICTOIRE\n");
 			close_window(data);
 		}
-		return ;
 	}
 	if (data->map[new_y][new_x] == 'C')
 	{
@@ -77,10 +93,8 @@ void	move_player(t_data *data, int x_offset, int y_offset)
 	}
 	if (!ft_manage_next(data, new_y, new_x))
 		return ;
-	set_new_var(data, new_y, new_x);
 	ft_player_rotation(data, x_offset, y_offset);
-	ft_printf("nombre de pas = %d\n", data->moves_count);
-	render_map(data);
+	set_new_var(data, new_y, new_x);
 }
 
 int	key_handler(int keycode, t_data *lst)

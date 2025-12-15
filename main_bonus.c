@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:01 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/09 16:52:03 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:02:12 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ int	init_struct(t_data *lst)
 	lst->player_right = NULL;
 	lst->player_up = NULL;
 	lst->enemy = NULL;
+	lst->e_verif = 0;
 	return (1);
 }
 

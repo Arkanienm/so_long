@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:06 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 16:22:41 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:02:14 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_data
 	int		player_y;
 	int		loop_count;
 	int		anim_frame;
+	int		e_verif;
 }	t_data;
 
 #endif

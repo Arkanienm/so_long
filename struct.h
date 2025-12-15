@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:06 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 15:46:13 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:02:16 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_data
 	int		collectibles_left;
 	int		player_x;
 	int		player_y;
+	int		e_verif;
 }	t_data;
 
 #endif

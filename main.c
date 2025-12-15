@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 11:26:01 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/09 16:52:15 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/15 18:02:12 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	init_struct(t_data *lst)
 	lst->exit = NULL;
 	lst->moves_count = 0;
 	lst->collectibles_left = 0;
+	lst->e_verif = 0;
 }
 
 int	main(int argc, char **argv)
