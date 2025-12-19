@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:03:44 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/15 18:02:12 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/16 14:36:13 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,13 +103,13 @@ int	key_handler(int keycode, t_data *lst)
 		return (0);
 	if (keycode == 65307)
 		close_window(lst);
-	if (keycode == 119)
+	if (keycode == 119 || keycode == 65362)
 		move_player(lst, 0, -1);
-	if (keycode == 97)
+	if (keycode == 97 || keycode == 65361)
 		move_player(lst, -1, 0);
-	if (keycode == 115)
+	if (keycode == 115 || keycode == 65364)
 		move_player(lst, 0, 1);
-	if (keycode == 100)
+	if (keycode == 100 || keycode == 65363)
 		move_player(lst, 1, 0);
 	return (0);
 }

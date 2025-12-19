@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 11:52:17 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/03 16:04:06 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/19 14:18:38 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	render_step(t_data *data)
 	str = ft_itoa(data->moves_count);
 	fstr = ft_strjoin("step = ", str);
 	put_sprite('1', data, 0, 0);
-	mlx_string_put(data->mlx, data->window, 10, 32, 0xFFFFFF, fstr);
+	mlx_string_put(data->mlx, data->window, 10, 32, 0x000000, fstr);
 	free (fstr);
 	free (str);
 	fstr = NULL;

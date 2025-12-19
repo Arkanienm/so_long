@@ -6,7 +6,7 @@
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:06:08 by amurtas           #+#    #+#             */
-/*   Updated: 2025/11/28 15:15:21 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/19 15:25:41 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	check_wall(t_data *data)
 	int	i;
 
 	i = 0;
+	check_map_size(data);
 	while (i < data->map_width - 1)
 	{
 		if (data->map[0][i] != '1' || data->map[data->map_height - 1][i] != '1')
@@ -49,6 +50,21 @@ int	check_wall(t_data *data)
 		if (data->map[i][0] != '1' || data->map[i][data->map_width - 1] != '1')
 			return (0);
 		i++;
+	}
+	return (1);
+}
+
+int	check_map_size(t_data *data)
+{
+	if (data->map_width > 30)
+	{
+		ft_printf("Error\nThe map is too big");
+		close_window(data);
+	}
+	if (data->map_height > 17)
+	{
+		ft_printf("Error\nThe map is too big");
+		close_window(data);
 	}
 	return (1);
 }

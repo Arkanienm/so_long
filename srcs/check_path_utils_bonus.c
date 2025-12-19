@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_path_utils.c                                 :+:      :+:    :+:   */
+/*   check_path_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amurtas <amurtas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:10:35 by amurtas           #+#    #+#             */
-/*   Updated: 2025/12/10 11:40:36 by amurtas          ###   ########.fr       */
+/*   Updated: 2025/12/19 15:25:17 by amurtas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**copy_map(t_data *data)
 
 void	flood_fill(char **tab, int x, int y)
 {
-	if (tab[y][x] == '1' || tab[y][x] == 'v')
+	if (tab[y][x] == '1' || tab[y][x] == 'v' || tab[y][x] == 'N')
 		return ;
 	tab[y][x] = 'v';
 	flood_fill (tab, x + 1, y);
